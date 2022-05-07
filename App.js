@@ -164,13 +164,11 @@ const mokData = [
   }
 ];
 
-const picture = 'https://upload.wikimedia.org/wikipedia/commons/1/18/React_Native_Logo.png';
-
 function App() {
   return (
     <ScrollView>
       <Text style={styles.title}>Construyendo mi primer UI con React Native</Text>
-      <Text style={styles.title}>Julián Jair López Salamanca</Text>
+      <Text style={styles.title}>Julián Jair López Salamanca sadsad</Text>
       <FlatList
         data={mokData}
         renderItem={({ item }) => <Card {...item} />}

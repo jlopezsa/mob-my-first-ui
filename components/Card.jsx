@@ -2,6 +2,7 @@ import React from "react";
 import { View, Text, StyleSheet, ImageBackground } from "react-native-web";
 
 function Card(props) {
+  const iconComments = 'https://cdn-icons-png.flaticon.com/512/1380/1380338.png';
   return (
     <View style={styles.container}>
       <View style={styles.image}>
@@ -11,11 +12,15 @@ function Card(props) {
         <Text style={styles.about}>{props.about}</Text>
         <Text>by {props.author}</Text>
         <Text style={styles.tags}>
-          {props.tags.map((item) => {
-            return <Text key={item.id} style={styles.tag}>{item} </Text>;
+          {props.tags.map((item,idx) => {
+            return <Text key={idx} style={styles.tag}>{item} </Text>;
           })}
         </Text>
-        <Text>{props.comments.length} comments</Text>
+        <View style={styles.comments}>
+          <ImageBackground source={{ uri: iconComments }} style={styles.imageIcon}>
+          </ImageBackground>
+          <Text>{props.comments.length} comments</Text>
+        </View>
       </View>
     </View>
   );
@@ -29,13 +34,13 @@ const styles = StyleSheet.create({
     flexDirection: "row",
   },
   image: {
-    height: 370,
+    height: 400,
     width: '30%',
     backgroundColor: "#878999",
     marginTop: 10,
   },
   content: {
-    height: 370,
+    height: 400,
     width: '70%',
     backgroundColor:"#cccccc",
     marginTop: 10,
@@ -57,6 +62,17 @@ const styles = StyleSheet.create({
     height: 30,
     borderRadius: 5,
     padding: 2,
+  },
+  comments:{
+    flex: 1,
+    flexDirection: "row",
+    justifyContent: "space-evenly",
+    alignItems: "center",
+  },
+  imageIcon:{
+    marginTop: 15,
+    height: 30,
+    width: 30,
   }
 });
 
