@@ -8,11 +8,11 @@ function Card(props) {
         <ImageBackground source={{ uri: props.picture }}></ImageBackground>
       </View>
       <View style={styles.content}>
-        <Text>{props.about}</Text>
+        <Text style={styles.about}>{props.about}</Text>
         <Text>by {props.author}</Text>
-        <Text>
+        <Text style={styles.tags}>
           {props.tags.map((item) => {
-            return <Text key={item.name} style={styles.tag}>{item} </Text>;
+            return <Text key={item.id} style={styles.tag}>{item} </Text>;
           })}
         </Text>
         <Text>{props.comments.length} comments</Text>
@@ -23,27 +23,40 @@ function Card(props) {
 
 const styles = StyleSheet.create({
   container: {
-    height: 250,
+    height: 300,
     width: '100%',
     flex: 1,
     flexDirection: "row",
   },
   image: {
-    height: 270,
+    height: 370,
     width: '30%',
-    backgroundColor: "blue",
+    backgroundColor: "#878999",
     marginTop: 10,
   },
   content: {
-    height: 270,
+    height: 370,
     width: '70%',
-    backgroundColor: "red",
+    backgroundColor:"#cccccc",
     marginTop: 10,
+    padding: 10,
+  },
+  about: {
+    fontWeight: 'bold',
+    marginBottom: 10,
+  },
+  tags: {
+    margin: 10,
+    height: 50,
   },
   tag: {
-    backgroundColor: "yellow",
+    backgroundColor: "#4c4c4c",
+    color: "white",
     width: 100,
     margin: 5,
+    height: 30,
+    borderRadius: 5,
+    padding: 2,
   }
 });
 
