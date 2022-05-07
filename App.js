@@ -1,14 +1,18 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import Card from './components/Card';
 
-export default function App() {
+function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+      <Text>Hello Julian Lopez como va bien!</Text>
+      <Card />
       <StatusBar style="auto" />
     </View>
   );
 }
+
+export default App;
 
 const styles = StyleSheet.create({
   container: {
