@@ -8,7 +8,7 @@ function App() {
   return (
     <ScrollView>
       <Text style={styles.title}>Construyendo mi primer UI con React Native</Text>
-      <Text style={styles.title}>Julián Jair López Salamanca sadsad</Text>
+      <Text style={styles.title}>Julián Jair López Salamanca</Text>
       <FlatList
         data={mokData}
         renderItem={({ item }) => <Card {...item} />}
